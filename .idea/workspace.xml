@@ -25,7 +25,7 @@
     </option>
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectId" id="1PSA5RhLLSI9CM5BThJiaf3Fnzt" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -46,6 +46,12 @@
     <property name="settings.editor.selected.configurable" value="editor.preferences.import" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.rederic.iotplant.applicationserver.controller" />
+      <recent name="com.rederic.iotplant.applicationserver.service.impl" />
+      <recent name="com.rederic.iotplant.applicationserver.service" />
+      <recent name="com.rederic.iotplant.applicationserver.dao" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\workspace\workspace-iot\iotplant-server\src\main\java\com\teejo\proofreading\applicationserver\controller" />
     </key>
@@ -111,6 +117,7 @@
       <workItem from="1565860603712" duration="2259000" />
       <workItem from="1565917863689" duration="598000" />
       <workItem from="1566222906893" duration="4232000" />
+      <workItem from="1566313309546" duration="3280000" />
     </task>
     <servers />
   </component>
@@ -122,21 +129,12 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
           </value>
         </entry>
       </map>
     </option>
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/rederic/iotplant/applicationserver/controller/DeviceController.java</url>
-          <line>30</line>
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
 </project>

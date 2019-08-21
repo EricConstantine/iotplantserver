@@ -37,7 +37,7 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/java/com/teejo/proofreading/applicationserver/controller" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/java/com/rederic/iotplant/applicationserver/common/beans" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="project.structure.last.edited" value="SDKs" />
@@ -53,6 +53,8 @@
       <recent name="com.rederic.iotplant.applicationserver.dao" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\workspace\workspace-iot\iotplant-server\src\main\java\com\rederic\iotplant\applicationserver\common\beans" />
+      <recent name="C:\workspace\workspace-iot\iotplant-server\src\main\java\com\rederic\iotplant\applicationserver\common\util" />
       <recent name="C:\workspace\workspace-iot\iotplant-server\src\main\java\com\teejo\proofreading\applicationserver\controller" />
     </key>
   </component>
@@ -117,7 +119,8 @@
       <workItem from="1565860603712" duration="2259000" />
       <workItem from="1565917863689" duration="598000" />
       <workItem from="1566222906893" duration="4232000" />
-      <workItem from="1566313309546" duration="3280000" />
+      <workItem from="1566313309546" duration="3693000" />
+      <workItem from="1566401635983" duration="2787000" />
     </task>
     <servers />
   </component>

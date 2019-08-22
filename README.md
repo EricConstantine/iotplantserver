@@ -1,2 +1,2 @@
 # iotplantserver
-server
+server iot

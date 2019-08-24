@@ -135,7 +135,7 @@ public class SensorController extends CommonController {
 	@ApiImplicitParams({
 			@ApiImplicitParam(name = "pid" ,value = "设备id" , required = false, dataType = "String")
 	})
-	@RequestMapping(value = "/getsensors", method = { RequestMethod.POST  })
+	@RequestMapping(value = "/getsensors")
 	public CommonResult getSensorByPid(String pid){
 		System.out.println(222);
 		System.out.println(pid);

@@ -18,5 +18,6 @@ public interface DeviceService {
 	public ModelDevice save(ModelDevice device);//保存数据
 	
 	public int saveFromList(List<Map<String,String>> list) throws Exception;//导入
-	
+
+	public Page<Map<String,Object>> getDevicePage (Pageable pageable,String keywords);
 }

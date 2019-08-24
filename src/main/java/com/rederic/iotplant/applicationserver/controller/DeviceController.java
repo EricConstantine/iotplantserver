@@ -4,6 +4,7 @@ import com.rederic.iotplant.applicationserver.common.CommonController;
 import com.rederic.iotplant.applicationserver.common.beans.CommonResult;
 import com.rederic.iotplant.applicationserver.entity.ModelDevice;
 import com.rederic.iotplant.applicationserver.service.DeviceService;
+import com.rederic.iotplant.applicationserver.service.SensorService;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiImplicitParam;
 import io.swagger.annotations.ApiImplicitParams;
@@ -34,6 +35,9 @@ public class DeviceController extends CommonController {
     @Autowired
     DeviceService deviceService;
 
+	@Autowired
+	SensorService sensorService;
+
 	@ApiOperation(value = "获取分页数据" ,notes = "获取分页数据" )
 	@ApiImplicitParams({
 		@ApiImplicitParam(name = "keywords" ,value = "搜索关键字" , required = false, dataType = "String")
@@ -42,6 +46,16 @@ public class DeviceController extends CommonController {
     public Page<ModelDevice> pagedata(Pageable pageable,String keywords){
         return deviceService.findAll(pageable,new Object[]{keywords});
     }
+
+	@ApiOperation(value = "获取设备列表分页数据" ,notes = "获取设备列表分页数据" )
+	@ApiImplicitParams({
+			@ApiImplicitParam(name = "keywords" ,value = "搜索关键字" , required = false, dataType = "String")
+	})
+	@RequestMapping(value = "/mngpagedata", method = { RequestMethod.GET  })
+	public Page<Map<String,Object>> managepagedata(Pageable pageable,String keywords){
+		Page<Map<String,Object>> list = deviceService.getDevicePage(pageable,keywords);
+		return deviceService.getDevicePage(pageable,keywords);
+	}
 
 	@ApiOperation(value = "获取单条数据对象" ,notes = "获取单条数据对象")
 	@ApiImplicitParams({

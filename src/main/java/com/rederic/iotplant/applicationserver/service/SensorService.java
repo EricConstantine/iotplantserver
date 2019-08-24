@@ -20,5 +20,5 @@ public interface SensorService {
 	public int saveFromList(List<Map<String,String>> list) throws Exception;//导入
 
 	public List<ModelSensor> getSensorsByPid(String pid);
-	
+
 }

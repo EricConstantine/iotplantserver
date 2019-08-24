@@ -86,5 +86,10 @@ public class DeviceServiceImpl implements DeviceService {
 		return i;
 	}
 
-    
+	@Override
+	public Page<Map<String , Object>> getDevicePage(Pageable pageable, String keywords) {
+		return deviceRepository.getDevicePage(pageable,keywords);
+	}
+
+
 }

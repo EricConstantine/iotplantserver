@@ -3,17 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="e337e091-de82-49db-9cf7-16878967fb21" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/rederic/iotplant/applicationserver/controller/DeviceController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/rederic/iotplant/applicationserver/controller/DeviceController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/rederic/iotplant/applicationserver/controller/SensorController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/rederic/iotplant/applicationserver/controller/SensorController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/rederic/iotplant/applicationserver/dao/DeviceRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/rederic/iotplant/applicationserver/dao/DeviceRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/rederic/iotplant/applicationserver/service/DeviceService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/rederic/iotplant/applicationserver/service/DeviceService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/rederic/iotplant/applicationserver/service/SensorService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/rederic/iotplant/applicationserver/service/SensorService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/rederic/iotplant/applicationserver/service/impl/DeviceServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/rederic/iotplant/applicationserver/service/impl/DeviceServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/rederic/iotplant/applicationserver/controller/DeviceController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/rederic/iotplant/applicationserver/controller/DeviceController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/rederic/iotplant/applicationserver/controller/SensorController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/rederic/iotplant/applicationserver/controller/SensorController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/rederic/iotplant/applicationserver/dao/DeviceRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/rederic/iotplant/applicationserver/dao/DeviceRepository.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/rederic/iotplant/applicationserver/service/DeviceService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/rederic/iotplant/applicationserver/service/DeviceService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/rederic/iotplant/applicationserver/service/impl/DeviceServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/rederic/iotplant/applicationserver/service/impl/DeviceServiceImpl.class" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -155,6 +144,8 @@
       <workItem from="1566541982280" duration="1419000" />
       <workItem from="1566543456652" duration="8322000" />
       <workItem from="1566608711281" duration="9048000" />
+      <workItem from="1566641522954" duration="660000" />
+      <workItem from="1566782050279" duration="1858000" />
     </task>
     <servers />
   </component>

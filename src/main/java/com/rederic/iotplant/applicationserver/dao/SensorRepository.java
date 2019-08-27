@@ -14,4 +14,7 @@ public interface SensorRepository extends JpaRepository<ModelSensor, String>,Jpa
 		//do somethings
     @Query(value="SELECT * FROM  model_sensor where pid =:pid",nativeQuery=true)//原生sql语句
     List<ModelSensor> getSensorsByPid(@Param("pid") String pid);
+
+    @Query(value="DELETE model_sensor where pid =:pid",nativeQuery=true)//原生sql语句
+    void deleteSensorByPid(@Param("pid") String pid);
 }

@@ -91,4 +91,9 @@ public class SensorServiceImpl implements SensorService {
 		return sensorRepository.getSensorsByPid(pid);
 	}
 
+	@Override
+	@Transactional(rollbackFor = Exception.class)
+	public void deleteSensorByPid(String pid) {
+		sensorRepository.deleteSensorByPid(pid);
+	}
 }

@@ -21,4 +21,6 @@ public interface SensorService {
 
 	public List<ModelSensor> getSensorsByPid(String pid);
 
+	public void deleteSensorByPid(String pid);
+
 }

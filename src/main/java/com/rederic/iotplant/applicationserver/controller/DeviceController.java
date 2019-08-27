@@ -1,8 +1,11 @@
 package com.rederic.iotplant.applicationserver.controller;
 
+import com.google.gson.Gson;
 import com.rederic.iotplant.applicationserver.common.CommonController;
 import com.rederic.iotplant.applicationserver.common.beans.CommonResult;
+import com.rederic.iotplant.applicationserver.common.util.ConvertUtil;
 import com.rederic.iotplant.applicationserver.entity.ModelDevice;
+import com.rederic.iotplant.applicationserver.entity.ModelSensor;
 import com.rederic.iotplant.applicationserver.service.DeviceService;
 import com.rederic.iotplant.applicationserver.service.SensorService;
 import io.swagger.annotations.Api;
@@ -15,15 +18,14 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
 import java.io.InputStream;
+import java.sql.Timestamp;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -76,6 +78,7 @@ public class DeviceController extends CommonController {
 			String[] id_array = deviceids.split(",");
 			for(String deviceid:id_array){
 				deviceService.deleteById(deviceid);
+				sensorService.deleteSensorByPid(deviceid);
 			}
 			cr = new CommonResult(true,0,null,"删除成功");
 		} catch (Exception e) {
@@ -98,6 +101,38 @@ public class DeviceController extends CommonController {
 		}
 		return   cr;
 	}
+    @ApiOperation(value = "保存传感器", notes = "保存传感器,id列为空则为新增,不为空则为修改")
+    @ApiImplicitParams({
+//            @ApiImplicitParam(name = "device",value = "传感器",required = false,dataType = "Map")
+    })
+    @RequestMapping(value = "/saveDevice" ,method = { RequestMethod.POST })
+    public CommonResult saveDevice(@RequestBody Map<String,Object> data) {
+        try {
+			ModelDevice device = new ModelDevice();
+            device.setId((String) data.get("id"));
+            device.setSn((String) data.get("sn"));
+            device.setName((String) data.get("name"));
+            device.setDescribes((String) data.get("describes"));
+            device.setLocation((String) data.get("locationstr"));
+            device.setTreaty((String) data.get("treaty"));
+            device.setUserid("1111");
+			Timestamp d = new Timestamp(System.currentTimeMillis());
+			device.setCreatetime(d);
+            ModelDevice savedev = deviceService.save(device);
+			List<Map<String,Object>> list = (List<Map<String,Object>>)data.get("sensordata");
+            for(int i=0 ;i<list.size();i++){
+				ModelSensor sensor =(ModelSensor) ConvertUtil.map2Obj(list.get(i),ModelSensor.class);
+				sensor.setPid(savedev.getId());
+				sensorService.save(sensor);
+            }
+            cr = new CommonResult(true,0,null,"保存成功");
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return   cr;
+    }
+
+
 
 	@ApiOperation(value = "导出数据", notes = "导出数据")
 	@ApiImplicitParams({
@@ -146,4 +181,22 @@ public class DeviceController extends CommonController {
 		return  cr;
 	}
 
+
+	@ApiOperation(value = "获取单个设备所有信息", notes = "获取单个设备所有信息")
+	@ApiImplicitParams({
+			@ApiImplicitParam(name = "id" ,value = "设备id" , required = false, dataType = "String")
+	})
+	@RequestMapping(value = "/findById", method = { RequestMethod.GET })
+	public CommonResult getDeviceById(String id) {
+		ModelDevice device = deviceService.findById(id);
+		List<ModelSensor> sensors = sensorService.getSensorsByPid(id);
+		CommonResult cr = new CommonResult();
+		Map<String,Object> map = new HashMap<String,Object>();
+		map.put("device",device);
+		map.put("sensors",sensors);
+		cr.setOk(true);
+		Gson gson = new Gson();
+		cr.setData(gson.toJson(map));
+		return  cr;
+	}
 }

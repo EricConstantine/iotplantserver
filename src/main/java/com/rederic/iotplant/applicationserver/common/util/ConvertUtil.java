@@ -1,14 +1,15 @@
 package com.rederic.iotplant.applicationserver.common.util;
 
-import java.util.Arrays;
-import java.util.HashMap;
-import java.util.Map;
-
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import org.springframework.util.LinkedMultiValueMap;
 import org.springframework.util.MultiValueMap;
 
-import com.fasterxml.jackson.core.JsonProcessingException;
-import com.fasterxml.jackson.databind.ObjectMapper;
+import java.lang.reflect.Field;
+import java.lang.reflect.Modifier;
+import java.util.Arrays;
+import java.util.HashMap;
+import java.util.Map;
 
 public class ConvertUtil {
 
@@ -58,5 +59,17 @@ public class ConvertUtil {
         }
         return paramMap;
     }
-
+    public static Object map2Obj(Map<String,Object> map,Class<?> clz) throws Exception{
+        Object obj = clz.newInstance();
+        Field[] declaredFields = obj.getClass().getDeclaredFields();
+        for(Field field:declaredFields){
+            int mod = field.getModifiers();
+            if(Modifier.isStatic(mod) || Modifier.isFinal(mod)){
+                continue;
+            }
+            field.setAccessible(true);
+            field.set(obj, map.get(field.getName()));
+        }
+        return obj;
+    }
 }

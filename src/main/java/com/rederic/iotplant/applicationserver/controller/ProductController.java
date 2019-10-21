@@ -37,15 +37,6 @@ public class ProductController extends CommonController {
 	@Autowired
 	NodeService nodeService;
 
-	@ApiOperation(value = "获取分页数据" ,notes = "获取分页数据" )
-	@ApiImplicitParams({
-		@ApiImplicitParam(name = "keywords" ,value = "搜索关键字" , required = false, dataType = "String")
-	})
-    @RequestMapping(value = "/pagedata", method = { RequestMethod.GET  })
-    public Page<ModelProduct> pagedata(Pageable pageable, String keywords){
-        return productService.findAll(pageable,new Object[]{keywords});
-    }
-
 	@ApiOperation(value = "获取单条数据对象" ,notes = "获取单条数据对象")
 	@ApiImplicitParams({
 		@ApiImplicitParam(paramType = "query",name = "productid" ,value = "产品ID" , required = true, dataType = "String")
@@ -54,7 +45,16 @@ public class ProductController extends CommonController {
 	public ModelProduct singledata(String productid){
 		return productService.findById(productid);
 	}
-	
+
+	@ApiOperation(value = "获取分页数据" ,notes = "获取分页数据" )
+	@ApiImplicitParams({
+			@ApiImplicitParam(name = "keywords" ,value = "搜索关键字" , required = false, dataType = "String")
+	})
+	@RequestMapping(value = "/mngpagedata", method = { RequestMethod.GET  })
+	public Page<Map<String,Object>>  productPage (Pageable pageable, String keywords){
+		return productService.getProductByPage(pageable,keywords);
+	}
+
 	
 	@ApiOperation(value = "删除产品", notes = "删除产品" )
 	@ApiImplicitParams({ @ApiImplicitParam(name = "productids", value = "产品ID", required = true, dataType = "String")

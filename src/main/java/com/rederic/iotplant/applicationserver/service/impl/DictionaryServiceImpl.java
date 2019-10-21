@@ -1,9 +1,9 @@
 package com.rederic.iotplant.applicationserver.service.impl;
 
 import com.rederic.iotplant.applicationserver.common.util.GsonUtil;
-import com.rederic.iotplant.applicationserver.dao.NodeRepository;
-import com.rederic.iotplant.applicationserver.entity.ModelNode;
-import com.rederic.iotplant.applicationserver.service.NodeService;
+import com.rederic.iotplant.applicationserver.dao.DictionaryRepository;
+import com.rederic.iotplant.applicationserver.entity.ModelDictionary;
+import com.rederic.iotplant.applicationserver.service.DictionaryService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
@@ -23,29 +23,24 @@ import java.util.Map;
 
 @Service
 @EnableTransactionManagement
-public class NodeServiceImpl implements NodeService {
+public class DictionaryServiceImpl implements DictionaryService {
 	
     @Autowired
-    private NodeRepository nodeRepository;
+    private DictionaryRepository dictionaryRepository;
 
     @SuppressWarnings("serial")
 	@Override
-	public Page<ModelNode> findAll(Pageable pageable,Object[] args) {
-		Page<ModelNode> result = nodeRepository.findAll(new Specification<ModelNode>() {
+	public Page<ModelDictionary> findAll(Pageable pageable,Object[] args) {
+		Page<ModelDictionary> result = dictionaryRepository.findAll(new Specification<ModelDictionary>() {
 	        @Override
-	        public Predicate toPredicate(Root<ModelNode> root, CriteriaQuery<?> query, CriteriaBuilder cb) {
+	        public Predicate toPredicate(Root<ModelDictionary> root, CriteriaQuery<?> query, CriteriaBuilder cb) {
 	            List<Predicate> list = new ArrayList<Predicate>();
 
 	            if (!StringUtils.isEmpty(args[0])) {
 					list.add(cb.like(root.get("id").as(String.class), "%" + args[0] + "%"));
 					list.add(cb.like(root.get("pid").as(String.class), "%" + args[0] + "%"));
-					list.add(cb.like(root.get("name").as(String.class), "%" + args[0] + "%"));
-					list.add(cb.like(root.get("skey").as(String.class), "%" + args[0] + "%"));
-					list.add(cb.like(root.get("rwtype").as(String.class), "%" + args[0] + "%"));
-					list.add(cb.like(root.get("stype").as(String.class), "%" + args[0] + "%"));
-					list.add(cb.like(root.get("detail").as(String.class), "%" + args[0] + "%"));
-					list.add(cb.like(root.get("sunit").as(String.class), "%" + args[0] + "%"));
-					list.add(cb.like(root.get("describes").as(String.class), "%" + args[0] + "%"));
+					list.add(cb.like(root.get("dname").as(String.class), "%" + args[0] + "%"));
+					list.add(cb.like(root.get("dvalue").as(String.class), "%" + args[0] + "%"));
 	                Predicate[] p = new Predicate[list.size()];
 		            return cb.or(list.toArray(p));
 	            }else{
@@ -57,38 +52,35 @@ public class NodeServiceImpl implements NodeService {
 	}
     
 	@Override
-	public ModelNode findById(String nodeid) {
-		return nodeRepository.findById(nodeid).get();
+	public ModelDictionary findById(String dictionaryid) {
+		return dictionaryRepository.findById(dictionaryid).get();
 	}
 
 	@Override
-	public void deleteById(String nodeid) {
-		nodeRepository.deleteById(nodeid);;
+	public void deleteById(String dictionaryid) {
+		dictionaryRepository.deleteById(dictionaryid);;
 	}
 
 	@Override
-	public ModelNode save(ModelNode node) {
-		return nodeRepository.save(node);
+	public ModelDictionary save(ModelDictionary dictionary) {
+		return dictionaryRepository.save(dictionary);
 	}
 
 	@Override
 	@Transactional(rollbackFor = Exception.class)
 	public int saveFromList(List<Map<String,String>> list) throws Exception {
 		int i=0;
-		List<ModelNode> nodelist = new ArrayList<ModelNode>();
+		List<ModelDictionary> dictionarylist = new ArrayList<ModelDictionary>();
 		for(Map<String,String> map:list){
-			ModelNode node = GsonUtil.getGson().fromJson(GsonUtil.getGson().toJson(map),ModelNode.class);
-			nodelist.add(node);
+			ModelDictionary dictionary = GsonUtil.getGson().fromJson(GsonUtil.getGson().toJson(map),ModelDictionary.class);
+			dictionarylist.add(dictionary);
 		}
-		for(ModelNode node:nodelist){
-			nodeRepository.save(node);
+		for(ModelDictionary dictionary:dictionarylist){
+			dictionaryRepository.save(dictionary);
 			i++;
 		}
 		return i;
 	}
 
-	@Override
-	public List<ModelNode> findByPId(String pid) {
-		return nodeRepository.findByPid(pid);
-	}
+    
 }

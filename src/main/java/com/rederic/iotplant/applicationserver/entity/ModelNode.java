@@ -17,7 +17,7 @@ public class ModelNode {
     private String name;
     private String skey;
     private String rwtype;
-    private String stype;
+    private String datadetail;
     private String datatype;
     private String sunit;
     private String describes;
@@ -26,14 +26,14 @@ public class ModelNode {
 		super();
 	}
 
-	public ModelNode(String id,String pid,String name,String skey,String rwtype,String stype,String datatype,String sunit,String describes) {
+	public ModelNode(String id,String pid,String name,String skey,String rwtype,String datadetail,String datatype,String sunit,String describes) {
 		super();
 		   this.id = id;
 		   this.pid = pid;
 		   this.name = name;
 		   this.skey = skey;
 		   this.rwtype = rwtype;
-		   this.stype = stype;
+		   this.datadetail = datadetail;
 		   this.datatype = datatype;
 		   this.sunit = sunit;
 		   this.describes = describes;
@@ -79,12 +79,12 @@ public class ModelNode {
         this.rwtype = rwtype;
     }
 
-    public String getStype() {
-        return this.stype;
+    public String getDatadetail() {
+        return this.datadetail;
     }
 
-    public void setStype(String stype) {
-        this.stype = stype;
+    public void setDatadetail(String datadetail) {
+        this.datadetail = datadetail;
     }
 
     public String getDatatype() {

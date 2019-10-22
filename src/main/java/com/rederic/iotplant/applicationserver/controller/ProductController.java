@@ -50,6 +50,15 @@ public class ProductController extends CommonController {
 	@ApiImplicitParams({
 			@ApiImplicitParam(name = "keywords" ,value = "搜索关键字" , required = false, dataType = "String")
 	})
+	@RequestMapping(value = "/pagedata", method = { RequestMethod.GET  })
+	public Page<ModelProduct> pagedata(Pageable pageable, String keywords){
+		return productService.findAll(pageable,new Object[]{keywords});
+	}
+
+	@ApiOperation(value = "获取分页数据" ,notes = "获取分页数据" )
+	@ApiImplicitParams({
+			@ApiImplicitParam(name = "keywords" ,value = "搜索关键字" , required = false, dataType = "String")
+	})
 	@RequestMapping(value = "/mngpagedata", method = { RequestMethod.GET  })
 	public Page<Map<String,Object>>  productPage (Pageable pageable, String keywords){
 		return productService.getProductByPage(pageable,keywords);

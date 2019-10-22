@@ -159,7 +159,8 @@
       <workItem from="1566641522954" duration="660000" />
       <workItem from="1566782050279" duration="1858000" />
       <workItem from="1566868306759" duration="21398000" />
-      <workItem from="1571660581722" duration="6647000" />
+      <workItem from="1571660581722" duration="7247000" />
+      <workItem from="1571746670469" duration="2487000" />
     </task>
     <servers />
   </component>
@@ -189,18 +190,13 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/com/rederic/iotplant/applicationserver/controller/ProductController.java</url>
-          <line>143</line>
+          <line>152</line>
           <option name="timeStamp" value="19" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/com/rederic/iotplant/applicationserver/controller/ProductController.java</url>
-          <line>150</line>
+          <line>159</line>
           <option name="timeStamp" value="21" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/rederic/iotplant/applicationserver/controller/ProductController.java</url>
-          <line>54</line>
-          <option name="timeStamp" value="23" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

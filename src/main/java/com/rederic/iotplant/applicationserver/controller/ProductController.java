@@ -5,6 +5,7 @@ import com.rederic.iotplant.applicationserver.common.beans.CommonResult;
 import com.rederic.iotplant.applicationserver.common.util.ConvertUtil;
 import com.rederic.iotplant.applicationserver.entity.ModelNode;
 import com.rederic.iotplant.applicationserver.entity.ModelProduct;
+import com.rederic.iotplant.applicationserver.service.DeviceService;
 import com.rederic.iotplant.applicationserver.service.NodeService;
 import com.rederic.iotplant.applicationserver.service.ProductService;
 import io.swagger.annotations.Api;
@@ -22,10 +23,9 @@ import org.springframework.web.multipart.MultipartFile;
 
 import java.io.InputStream;
 import java.sql.Timestamp;
+import java.text.DateFormat;
 import java.text.SimpleDateFormat;
-import java.util.Date;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 @RestController
 @RequestMapping("/product")
@@ -36,6 +36,8 @@ public class ProductController extends CommonController {
 	ProductService productService;
 	@Autowired
 	NodeService nodeService;
+    @Autowired
+    DeviceService deviceService;
 
 	@ApiOperation(value = "获取单条数据对象" ,notes = "获取单条数据对象")
 	@ApiImplicitParams({
@@ -54,6 +56,31 @@ public class ProductController extends CommonController {
 	public Page<ModelProduct> pagedata(Pageable pageable, String keywords){
 		return productService.findAll(pageable,new Object[]{keywords});
 	}
+    @ApiOperation(value = "获取分页数据" ,notes = "获取分页数据" )
+    @ApiImplicitParams({
+            @ApiImplicitParam(name = "keywords" ,value = "搜索关键字" , required = false, dataType = "String")
+    })
+    @RequestMapping(value = "/productTree", method = { RequestMethod.GET  })
+    public List<Map<String,Object>> getProductTree(){
+	    List<ModelProduct> proList = productService.getAllProduct();
+        List<Map<String,Object>> result = new ArrayList<>();
+        DateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+        for (int i=0;i<proList.size();i++){
+            ModelProduct sinPro = proList.get(i);
+	        Map<String,Object> map = new HashMap<>();
+	        map.put("id",sinPro.getId());
+	        map.put("name",sinPro.getName());
+	        map.put("describes",sinPro.getDescribes());
+	        map.put("treaty",sinPro.getTreaty());
+	        map.put("creator",sinPro.getCreator());
+	        map.put("updatetime",sinPro.getUpdatetime()==null?"":sdf.format(sinPro.getUpdatetime()));
+	        map.put("createtime",sinPro.getCreatetime()==null?"":sdf.format(sinPro.getCreatetime()));
+	        List<Map<String,Object>> deviceList = deviceService.getDeviceByPid(sinPro.getId());
+            map.put("children",deviceList);
+            result.add(map);
+        }
+        return result;
+    }
 
 	@ApiOperation(value = "获取分页数据" ,notes = "获取分页数据" )
 	@ApiImplicitParams({

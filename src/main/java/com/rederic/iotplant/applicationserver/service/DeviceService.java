@@ -19,5 +19,6 @@ public interface DeviceService {
 	
 	public int saveFromList(List<Map<String,String>> list) throws Exception;//导入
 
-	public Page<Map<String,Object>> getDevicePage (Pageable pageable,String keywords);
+	public List<Map<String,Object>> getDeviceByPid(String pid);
+	
 }

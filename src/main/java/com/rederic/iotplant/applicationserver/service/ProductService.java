@@ -13,7 +13,7 @@ public interface ProductService {
 	public ModelProduct findById(String productid);//根据主键获取对象
 	
 	public Page<ModelProduct> findAll(Pageable pageable,Object[] args);//获取分页信息
-	
+
 	public void deleteById(String productid);//获取分页信息
 	
 	public ModelProduct save(ModelProduct product);//保存数据
@@ -21,4 +21,6 @@ public interface ProductService {
 	public int saveFromList(List<Map<String,String>> list) throws Exception;//导入
 
 	Page<Map<String , Object>> getProductByPage(Pageable pageable, @Param("keywords") String keywords);
+
+	public List<ModelProduct> getAllProduct();//获取分页信息
 }

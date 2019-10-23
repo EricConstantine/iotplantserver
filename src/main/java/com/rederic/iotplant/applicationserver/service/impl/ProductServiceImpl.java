@@ -87,4 +87,9 @@ public class ProductServiceImpl implements ProductService {
 	public Page<Map<String, Object>> getProductByPage(Pageable pageable, String keywords) {
 		return productRepository.getProductByPage(pageable,keywords);
 	}
+
+	@Override
+	public List<ModelProduct> getAllProduct() {
+		return productRepository.findAll();
+	}
 }

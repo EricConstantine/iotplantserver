@@ -3,18 +3,34 @@
   <component name="ChangeListManager">
     <list default="true" id="e337e091-de82-49db-9cf7-16878967fb21" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/rederic/iotplant/applicationserver/common/util/ConvertUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/rederic/iotplant/applicationserver/common/util/ConvertUtil.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/rederic/iotplant/applicationserver/controller/DeviceController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/rederic/iotplant/applicationserver/controller/DeviceController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/rederic/iotplant/applicationserver/controller/SensorController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/rederic/iotplant/applicationserver/controller/SensorController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/rederic/iotplant/applicationserver/dao/SensorRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/rederic/iotplant/applicationserver/dao/SensorRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/rederic/iotplant/applicationserver/service/SensorService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/rederic/iotplant/applicationserver/service/SensorService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/rederic/iotplant/applicationserver/service/impl/SensorServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/rederic/iotplant/applicationserver/service/impl/SensorServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/rederic/iotplant/applicationserver/common/util/ConvertUtil.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/rederic/iotplant/applicationserver/common/util/ConvertUtil.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/rederic/iotplant/applicationserver/controller/DeviceController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/rederic/iotplant/applicationserver/controller/ProductController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/rederic/iotplant/applicationserver/controller/ProductController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/rederic/iotplant/applicationserver/controller/SensorController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/rederic/iotplant/applicationserver/dao/DeviceRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/rederic/iotplant/applicationserver/dao/SensorRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/rederic/iotplant/applicationserver/entity/ModelDevice.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/rederic/iotplant/applicationserver/entity/ModelSensor.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/rederic/iotplant/applicationserver/service/DeviceService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/rederic/iotplant/applicationserver/service/ProductService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/rederic/iotplant/applicationserver/service/ProductService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/rederic/iotplant/applicationserver/service/SensorService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/rederic/iotplant/applicationserver/service/impl/DeviceServiceImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/rederic/iotplant/applicationserver/service/impl/ProductServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/rederic/iotplant/applicationserver/service/impl/ProductServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/rederic/iotplant/applicationserver/service/impl/SensorServiceImpl.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/rederic/iotplant/applicationserver/controller/DeviceController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/rederic/iotplant/applicationserver/controller/DeviceController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/rederic/iotplant/applicationserver/controller/SensorController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/rederic/iotplant/applicationserver/controller/SensorController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/rederic/iotplant/applicationserver/dao/SensorRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/rederic/iotplant/applicationserver/dao/SensorRepository.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/rederic/iotplant/applicationserver/service/SensorService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/rederic/iotplant/applicationserver/service/SensorService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/rederic/iotplant/applicationserver/service/impl/SensorServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/rederic/iotplant/applicationserver/service/impl/SensorServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/rederic/iotplant/applicationserver/controller/ProductController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/rederic/iotplant/applicationserver/controller/ProductController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/rederic/iotplant/applicationserver/controller/SensorController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/rederic/iotplant/applicationserver/dao/DeviceRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/rederic/iotplant/applicationserver/dao/DeviceRepository.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/rederic/iotplant/applicationserver/dao/SensorRepository.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/rederic/iotplant/applicationserver/entity/ModelDevice.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/rederic/iotplant/applicationserver/entity/ModelDevice.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/rederic/iotplant/applicationserver/entity/ModelSensor.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/rederic/iotplant/applicationserver/service/DeviceService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/rederic/iotplant/applicationserver/service/DeviceService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/rederic/iotplant/applicationserver/service/ProductService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/rederic/iotplant/applicationserver/service/ProductService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/rederic/iotplant/applicationserver/service/SensorService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/rederic/iotplant/applicationserver/service/impl/DeviceServiceImpl$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/rederic/iotplant/applicationserver/service/impl/DeviceServiceImpl$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/rederic/iotplant/applicationserver/service/impl/DeviceServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/rederic/iotplant/applicationserver/service/impl/DeviceServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/rederic/iotplant/applicationserver/service/impl/ProductServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/rederic/iotplant/applicationserver/service/impl/ProductServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/rederic/iotplant/applicationserver/service/impl/SensorServiceImpl$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/rederic/iotplant/applicationserver/service/impl/SensorServiceImpl.class" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -161,6 +177,7 @@
       <workItem from="1566868306759" duration="21398000" />
       <workItem from="1571660581722" duration="7247000" />
       <workItem from="1571746670469" duration="2487000" />
+      <workItem from="1571806676016" duration="7721000" />
     </task>
     <servers />
   </component>
@@ -184,19 +201,24 @@
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/rederic/iotplant/applicationserver/controller/SensorController.java</url>
-          <line>138</line>
-          <option name="timeStamp" value="6" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/com/rederic/iotplant/applicationserver/controller/ProductController.java</url>
-          <line>152</line>
+          <line>179</line>
           <option name="timeStamp" value="19" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/com/rederic/iotplant/applicationserver/controller/ProductController.java</url>
-          <line>159</line>
+          <line>186</line>
           <option name="timeStamp" value="21" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/rederic/iotplant/applicationserver/controller/DeviceController.java</url>
+          <line>140</line>
+          <option name="timeStamp" value="22" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/rederic/iotplant/applicationserver/controller/ProductController.java</url>
+          <line>66</line>
+          <option name="timeStamp" value="25" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

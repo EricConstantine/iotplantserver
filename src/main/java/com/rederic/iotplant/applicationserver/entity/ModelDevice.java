@@ -15,29 +15,28 @@ public class ModelDevice {
     @GenericGenerator(name = "system-uuid", strategy = "uuid.hex")
     @GeneratedValue(generator = "system-uuid")	
     private String id;
-    private String sn;
+    private String pid;
     private String name;
     private String describes;
-    private String treaty;
     private String location;
-    @JsonFormat(timezone = "GMT+8", pattern = "yyyy-MM-dd HH:mm:ss")
+	@JsonFormat(timezone = "GMT+8", pattern = "yyyy-MM-dd HH:mm:ss")
     private Timestamp createtime;
-    private String userid;
+	@JsonFormat(timezone = "GMT+8", pattern = "yyyy-MM-dd HH:mm:ss")
+    private Timestamp updatetime;
 
 	public ModelDevice() {
 		super();
 	}
 
-	public ModelDevice(String id,String sn,String name,String describes,String treaty,String location,Timestamp createtime,String userid) {
+	public ModelDevice(String id,String pid,String name,String describes,String location,Timestamp createtime,Timestamp updatetime) {
 		super();
 		   this.id = id;
-		   this.sn = sn;
+		   this.pid = pid;
 		   this.name = name;
 		   this.describes = describes;
-		   this.treaty = treaty;
 		   this.location = location;
 		   this.createtime = createtime;
-		   this.userid = userid;
+		   this.updatetime = updatetime;
 	}
 
     public String getId() {
@@ -48,12 +47,12 @@ public class ModelDevice {
         this.id = id;
     }
 
-    public String getSn() {
-        return this.sn;
+    public String getPid() {
+        return this.pid;
     }
 
-    public void setSn(String sn) {
-        this.sn = sn;
+    public void setPid(String pid) {
+        this.pid = pid;
     }
 
     public String getName() {
@@ -72,14 +71,6 @@ public class ModelDevice {
         this.describes = describes;
     }
 
-    public String getTreaty() {
-        return this.treaty;
-    }
-
-    public void setTreaty(String treaty) {
-        this.treaty = treaty;
-    }
-
     public String getLocation() {
         return this.location;
     }
@@ -96,12 +87,12 @@ public class ModelDevice {
         this.createtime = createtime;
     }
 
-    public String getUserid() {
-        return this.userid;
+    public Timestamp getUpdatetime() {
+        return this.updatetime;
     }
 
-    public void setUserid(String userid) {
-        this.userid = userid;
+    public void setUpdatetime(Timestamp updatetime) {
+        this.updatetime = updatetime;
     }
 
 

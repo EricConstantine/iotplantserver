@@ -30,7 +30,7 @@ public class DeviceServiceImpl implements DeviceService {
 
     @SuppressWarnings("serial")
 	@Override
-	public Page<ModelDevice> findAll(Pageable pageable,Object[] args) {
+	public Page<ModelDevice> findAll(Pageable pageable, Object[] args) {
 		Page<ModelDevice> result = deviceRepository.findAll(new Specification<ModelDevice>() {
 	        @Override
 	        public Predicate toPredicate(Root<ModelDevice> root, CriteriaQuery<?> query, CriteriaBuilder cb) {
@@ -38,13 +38,10 @@ public class DeviceServiceImpl implements DeviceService {
 
 	            if (!StringUtils.isEmpty(args[0])) {
 					list.add(cb.like(root.get("id").as(String.class), "%" + args[0] + "%"));
-					list.add(cb.like(root.get("sn").as(String.class), "%" + args[0] + "%"));
+					list.add(cb.like(root.get("pid").as(String.class), "%" + args[0] + "%"));
 					list.add(cb.like(root.get("name").as(String.class), "%" + args[0] + "%"));
 					list.add(cb.like(root.get("describes").as(String.class), "%" + args[0] + "%"));
-					list.add(cb.like(root.get("treaty").as(String.class), "%" + args[0] + "%"));
 					list.add(cb.like(root.get("location").as(String.class), "%" + args[0] + "%"));
-					list.add(cb.like(root.get("createtime").as(String.class), "%" + args[0] + "%"));
-					list.add(cb.like(root.get("userid").as(String.class), "%" + args[0] + "%"));
 	                Predicate[] p = new Predicate[list.size()];
 		            return cb.or(list.toArray(p));
 	            }else{
@@ -87,9 +84,8 @@ public class DeviceServiceImpl implements DeviceService {
 	}
 
 	@Override
-	public Page<Map<String , Object>> getDevicePage(Pageable pageable, String keywords) {
-		return deviceRepository.getDevicePage(pageable,keywords);
+	public List<Map<String,Object>> getDeviceByPid(String pid) {
+		return deviceRepository.getDeviceByPid(pid);
 	}
-
 
 }

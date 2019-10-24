@@ -52,6 +52,18 @@
 			<groupId>net.sf.ehcache</groupId>
 			<artifactId>ehcache</artifactId>
 		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-integration</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.integration</groupId>
+			<artifactId>spring-integration-stream</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.integration</groupId>
+			<artifactId>spring-integration-mqtt</artifactId>
+		</dependency>
 		<!--&lt;!&ndash; https://mvnrepository.com/artifact/org.docx4j/docx4j &ndash;&gt;-->
 		<!-- begin   docx4j开始 -->
 		<!-- <dependency>
@@ -204,11 +216,11 @@
 
 
 		<!--hanlp-->
-		<dependency>
+		<!--<dependency>
 			<groupId>com.hankcs</groupId>
 			<artifactId>hanlp</artifactId>
 			<version>portable-1.6.5</version>
-		</dependency>
+		</dependency>-->
 
 		<!--引入公司自己AI的jar包，及其依赖的包-->
 		<!--<dependency>-->
@@ -231,7 +243,7 @@
 		</dependency>
 
 		<!-- https://mvnrepository.com/artifact/com.baidubce/bce-java-sdk -->
-		<dependency>
+		<!--<dependency>
 			<groupId>com.baidubce</groupId>
 			<artifactId>bce-java-sdk</artifactId>
 			<version>0.10.28</version>
@@ -241,7 +253,7 @@
 			<artifactId>junit-jupiter-api</artifactId>
 			<version>RELEASE</version>
 			<scope>compile</scope>
-		</dependency>
+		</dependency>-->
 
 		<dependency>
 			<groupId>fr.opensagres.xdocreport</groupId>

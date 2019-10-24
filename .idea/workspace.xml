@@ -60,8 +60,7 @@
   <component name="MavenImportPreferences">
     <option name="generalSettings">
       <MavenGeneralSettings>
-        <option name="mavenHome" value="D:/soft/apache-maven-3.5.0" />
-        <option name="userSettingsFile" value="D:\soft\apache-maven-3.5.0\conf\settings.xml" />
+        <option name="mavenHome" value="$APPLICATION_HOME_DIR$/plugins/maven/lib/maven3" />
       </MavenGeneralSettings>
     </option>
     <option name="importingSettings">
@@ -80,13 +79,13 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/pom.xml" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/resources" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="project.structure.last.edited" value="SDKs" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
-    <property name="settings.editor.selected.configurable" value="editor.preferences.import" />
+    <property name="settings.editor.selected.configurable" value="MavenSettings" />
   </component>
   <component name="RecentsManager">
     <key name="CopyClassDialog.RECENTS_KEY">
@@ -96,9 +95,11 @@
       <recent name="com.rederic.iotplant.applicationserver.dao" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\workspace\workspace-iot\iotplant-server\src\main\resources" />
+      <recent name="C:\workspace\workspace-iot\iotplant-server\src\main\java\com\rederic\iotplant\applicationserver" />
+      <recent name="C:\workspace\workspace-iot\iotplant-server\src\main\java\com\rederic\iotplant\applicationserver\common\config" />
       <recent name="C:\workspace\workspace-iot\iotplant-server\src\main\java\com\rederic\iotplant\applicationserver\common\beans" />
       <recent name="C:\workspace\workspace-iot\iotplant-server\src\main\java\com\rederic\iotplant\applicationserver\common\util" />
-      <recent name="C:\workspace\workspace-iot\iotplant-server\src\main\java\com\teejo\proofreading\applicationserver\controller" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -178,6 +179,9 @@
       <workItem from="1571660581722" duration="7247000" />
       <workItem from="1571746670469" duration="2487000" />
       <workItem from="1571806676016" duration="7721000" />
+      <workItem from="1571919244233" duration="2206000" />
+      <workItem from="1571930851477" duration="416000" />
+      <workItem from="1571931289093" duration="793000" />
     </task>
     <servers />
   </component>
@@ -219,6 +223,11 @@
           <url>file://$PROJECT_DIR$/src/main/java/com/rederic/iotplant/applicationserver/controller/ProductController.java</url>
           <line>66</line>
           <option name="timeStamp" value="25" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/rederic/iotplant/applicationserver/controller/UserController.java</url>
+          <line>15</line>
+          <option name="timeStamp" value="26" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

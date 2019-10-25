@@ -4,6 +4,7 @@ package com.rederic.iotplant.applicationserver.mqtt;
 import com.google.common.collect.Sets;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
+import com.rederic.iotplant.applicationserver.common.beans.MsgData;
 import org.eclipse.paho.client.mqttv3.IMqttDeliveryToken;
 import org.eclipse.paho.client.mqttv3.MqttCallback;
 import org.eclipse.paho.client.mqttv3.MqttException;
@@ -12,6 +13,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Component;
 
+import java.util.Map;
 import java.util.Set;
 
 
@@ -76,7 +78,14 @@ public class MQTTCallback implements MqttCallback {
     	try {
     		String sn = s.substring(s.lastIndexOf("/")+1, s.length());
     		Gson gson = new GsonBuilder().setDateFormat("yyyy-MM-dd HH:mm:ss").create();
-    	//	GtCommonResult cr = gson.fromJson(new String(mqttMessage.getPayload()), GtCommonResult.class);
+    		Map<String,String> map = gson.fromJson(new String(mqttMessage.getPayload()),Map.class);
+    		String code = map.get("key");
+    		String value = map.get("value");
+            MsgData msgdata = gson.fromJson(value,MsgData.class);
+            System.out.println(msgdata.getDatalist().get(0).getKey());
+            System.out.println(code);
+            System.out.println("收到一条消息"+s);
+//    		GtCommonResult cr = gson.fromJson(new String(mqttMessage.getPayload()), GtCommonResult.class);
     		//String code = cr.getCode();
     		//上线
 //    		if("online".equals(code)) {

@@ -5,6 +5,7 @@ import com.rederic.iotplant.applicationserver.common.beans.CommonResult;
 import com.rederic.iotplant.applicationserver.common.util.ConvertUtil;
 import com.rederic.iotplant.applicationserver.entity.ModelNode;
 import com.rederic.iotplant.applicationserver.entity.ModelProduct;
+import com.rederic.iotplant.applicationserver.mqtt.MQTTCallback;
 import com.rederic.iotplant.applicationserver.service.DeviceService;
 import com.rederic.iotplant.applicationserver.service.NodeService;
 import com.rederic.iotplant.applicationserver.service.ProductService;
@@ -79,6 +80,10 @@ public class ProductController extends CommonController {
             map.put("children",deviceList);
             result.add(map);
         }
+		MQTTCallback mc = new MQTTCallback();
+        Set<String> aa = mc.getDeviceSet();
+		System.out.println("当前在线的集合");
+		System.out.println(aa.toString());
         return result;
     }
 

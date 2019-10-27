@@ -322,6 +322,9 @@
       <workItem from="1571930851477" duration="416000" />
       <workItem from="1571931289093" duration="793000" />
       <workItem from="1571999990629" duration="3222000" />
+      <workItem from="1572070137383" duration="4657000" />
+      <workItem from="1572141899662" duration="9925000" />
+      <workItem from="1572165342970" duration="4489000" />
     </task>
     <servers />
   </component>
@@ -346,28 +349,33 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/com/rederic/iotplant/applicationserver/controller/ProductController.java</url>
-          <line>179</line>
+          <line>184</line>
           <option name="timeStamp" value="19" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/com/rederic/iotplant/applicationserver/controller/ProductController.java</url>
-          <line>186</line>
+          <line>191</line>
           <option name="timeStamp" value="21" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/rederic/iotplant/applicationserver/controller/DeviceController.java</url>
-          <line>140</line>
-          <option name="timeStamp" value="22" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/com/rederic/iotplant/applicationserver/controller/ProductController.java</url>
-          <line>66</line>
+          <line>67</line>
           <option name="timeStamp" value="25" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/com/rederic/iotplant/applicationserver/controller/UserController.java</url>
           <line>15</line>
           <option name="timeStamp" value="26" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/rederic/iotplant/applicationserver/mqtt/MQTTCallback.java</url>
+          <line>110</line>
+          <option name="timeStamp" value="27" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/rederic/iotplant/applicationserver/mqtt/MQTTCallback.java</url>
+          <line>103</line>
+          <option name="timeStamp" value="28" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

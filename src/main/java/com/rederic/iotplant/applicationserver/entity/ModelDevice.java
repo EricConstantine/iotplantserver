@@ -1,10 +1,8 @@
 package com.rederic.iotplant.applicationserver.entity;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
-import org.hibernate.annotations.GenericGenerator;
 
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import java.sql.Timestamp;
 
@@ -12,8 +10,8 @@ import java.sql.Timestamp;
 public class ModelDevice {
 
 	@Id
-    @GenericGenerator(name = "system-uuid", strategy = "uuid.hex")
-    @GeneratedValue(generator = "system-uuid")	
+    //@GenericGenerator(name = "system-uuid", strategy = "uuid.hex")
+    //@GeneratedValue(generator = "system-uuid")
     private String id;
     private String pid;
     private String name;

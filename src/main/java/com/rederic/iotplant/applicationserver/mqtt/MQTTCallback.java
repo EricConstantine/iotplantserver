@@ -2,9 +2,14 @@ package com.rederic.iotplant.applicationserver.mqtt;
 
 
 import com.google.common.collect.Sets;
+import com.google.common.reflect.TypeToken;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
-import com.rederic.iotplant.applicationserver.common.beans.MsgData;
+import com.rederic.iotplant.applicationserver.common.beans.MsgDetail;
+import com.rederic.iotplant.applicationserver.common.util.CommonData;
+import com.rederic.iotplant.applicationserver.common.util.SpringUtil;
+import com.rederic.iotplant.applicationserver.entity.ModelDevice;
+import com.rederic.iotplant.applicationserver.service.DeviceService;
 import org.eclipse.paho.client.mqttv3.IMqttDeliveryToken;
 import org.eclipse.paho.client.mqttv3.MqttCallback;
 import org.eclipse.paho.client.mqttv3.MqttException;
@@ -13,7 +18,9 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Component;
 
-import java.util.Map;
+import java.lang.reflect.Type;
+import java.sql.Timestamp;
+import java.util.List;
 import java.util.Set;
 
 
@@ -25,10 +32,18 @@ import java.util.Set;
 @Component
 public class MQTTCallback implements MqttCallback {
 
-    private static final Logger LOGGER = LoggerFactory.getLogger(MQTTCallback.class);
+    public MQTTCallback() {
+    }
 
-    Set<String> netset = Sets.newConcurrentHashSet();
+    private static final Logger LOGGER = LoggerFactory.getLogger(MQTTCallback.class);
+    //当前在线的数据集合
+    private Set<String> deviceSet = Sets.newConcurrentHashSet();
     private MQTTClient myMQTTClient;
+    private DeviceService deviceService = (DeviceService)SpringUtil.getBean("deviceServiceImpl");
+
+    public Set<String> getDeviceSet() {
+        return deviceSet;
+    }
 
     public MQTTCallback(MQTTClient myMQTTClient) {
         this.myMQTTClient = myMQTTClient;
@@ -78,33 +93,32 @@ public class MQTTCallback implements MqttCallback {
     	try {
     		String sn = s.substring(s.lastIndexOf("/")+1, s.length());
     		Gson gson = new GsonBuilder().setDateFormat("yyyy-MM-dd HH:mm:ss").create();
-    		Map<String,String> map = gson.fromJson(new String(mqttMessage.getPayload()),Map.class);
-    		String code = map.get("key");
-    		String value = map.get("value");
-            MsgData msgdata = gson.fromJson(value,MsgData.class);
-            System.out.println(msgdata.getDatalist().get(0).getKey());
-            System.out.println(code);
-            System.out.println("收到一条消息"+s);
-//    		GtCommonResult cr = gson.fromJson(new String(mqttMessage.getPayload()), GtCommonResult.class);
-    		//String code = cr.getCode();
-    		//上线
-//    		if("online".equals(code)) {
-//    			netset.add(sn);
-//    		}else if("offline".equals(code)) {
-//    			netset.remove(sn);
-//    		}
-    		//只针对在线的集合进行处理
-//    		if(netset.contains(sn)) {
-//    			if("rts".equals(code)){
-//    				int type = cr.getType();
-//    				String data = gson.toJson(cr.getData());
-//    				Map map = new HashMap<>();
-//    				map.put("rts", cr.getData());
-//    				System.out.println("新建一个推送线程，将要推送的数据大小为"+gson.toJson(map).length());
-////    				PostToServerThread t =  new PostToServerThread(gson.toJson(map));
-////    				t.start();
-//    			}
-//    		}
+            Type type = new TypeToken<List<MsgDetail>>(){}.getType();
+            List<MsgDetail> msgList = new Gson().fromJson(new String(mqttMessage.getPayload()),type);
+            for(int i=0;i<msgList.size();i++){
+                System.out.println(msgList.get(i).getKey());
+                String code = msgList.get(i).getKey();
+                String value = msgList.get(i).getValue();
+                if((CommonData.online).equals(code)){
+                    Timestamp time = new Timestamp(System.currentTimeMillis());
+                    ModelDevice device = new ModelDevice();
+                    deviceSet.add(sn);
+                    try {//设备已经存在
+                        device = deviceService.findById(sn);
+                        device.setUpdatetime(time);
+                        //myMQTTClient.publish("webgate/onlineOne",gson.toJson(device));
+                    }catch (Exception e){//设备不存在则新建设备
+                        device.setId(sn);
+                        device.setPid(value);
+                        device.setCreatetime(time);;
+                        //myMQTTClient.publish("webgate/onlineAll",gson.toJson(deviceSet));
+                    }
+                    deviceService.save(device);
+                }else if((CommonData.offline).equals(code)){
+                    deviceSet.remove(sn);
+                    //myMQTTClient.publish("webgate/offlineOne",sn);
+                }
+            }
 
 		} catch (Exception e) {
 			// TODO: handle exception

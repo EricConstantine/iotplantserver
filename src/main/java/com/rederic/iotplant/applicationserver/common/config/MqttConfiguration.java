@@ -9,7 +9,7 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.PropertySource;
- 
+
 /**
  * description:
  * author: yangzihe
@@ -18,9 +18,9 @@ import org.springframework.context.annotation.PropertySource;
 @Configuration
 @PropertySource(value="classpath:mqtt.properties")
 public class MqttConfiguration {
- 
+
 	private static final Logger LOGGER = LoggerFactory.getLogger(MqttConfiguration.class);
-	
+
     @Value("${mqtt.host}")
     String host;
     @Value("${mqtt.username}")
@@ -35,7 +35,7 @@ public class MqttConfiguration {
     int keepAlive;
     @Value("${mqtt.defaultTopic}")
     String defaultTopic;
- 
+
     @Bean//注入spring
     public MQTTClient myMQTTClient() {
         MQTTClient myMQTTClient = new MQTTClient(host, clientId, username, password, timeOut, keepAlive);
@@ -57,6 +57,5 @@ public class MqttConfiguration {
         }
         return myMQTTClient;
     }
- 
+
 }
- 

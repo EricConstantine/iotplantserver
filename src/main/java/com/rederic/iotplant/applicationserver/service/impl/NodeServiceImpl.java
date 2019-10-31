@@ -88,7 +88,7 @@ public class NodeServiceImpl implements NodeService {
 	}
 
 	@Override
-	public List<ModelNode> findByPId(String pid) {
+	public List<Map<String,Object>> findByPId(String pid) {
 		return nodeRepository.findByPid(pid);
 	}
 }

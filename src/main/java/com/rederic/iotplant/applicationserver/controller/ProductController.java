@@ -28,6 +28,8 @@ import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.*;
 
+//import com.rederic.iotplant.applicationserver.mqtt.MQTTCallback;
+
 @RestController
 @RequestMapping("/product")
 @Api(value="产品接口",tags={"product(产品)-增删改查;导入导出"})
@@ -62,9 +64,10 @@ public class ProductController extends CommonController {
             @ApiImplicitParam(name = "keywords" ,value = "搜索关键字" , required = false, dataType = "String")
     })
     @RequestMapping(value = "/productTree", method = { RequestMethod.GET  })
-    public List<Map<String,Object>> getProductTree(){
+    public Map<String,Object> getProductTree(){
 	    List<ModelProduct> proList = productService.getAllProduct();
         List<Map<String,Object>> result = new ArrayList<>();
+        Map<String,Object> resultmap = new HashMap<>();
         DateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
         for (int i=0;i<proList.size();i++){
             ModelProduct sinPro = proList.get(i);
@@ -80,11 +83,9 @@ public class ProductController extends CommonController {
             map.put("children",deviceList);
             result.add(map);
         }
-		MQTTCallback mc = new MQTTCallback();
-        Set<String> aa = mc.getDeviceSet();
-		System.out.println("当前在线的集合");
-		System.out.println(aa.toString());
-        return result;
+        resultmap.put("treedata",result);
+        resultmap.put("onliendata",MQTTCallback.deviceSet);
+        return resultmap;
     }
 
 	@ApiOperation(value = "获取分页数据" ,notes = "获取分页数据" )

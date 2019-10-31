@@ -11,7 +11,7 @@ public interface NodeService {
 	
 	public ModelNode findById(String nodeid);//根据主键获取对象
 
-	public List<ModelNode> findByPId(String pid);//根据主键获取对象
+	public List<Map<String,Object>> findByPId(String pid);//根据主键获取对象
 	
 	public Page<ModelNode> findAll(Pageable pageable,Object[] args);//获取分页信息
 	

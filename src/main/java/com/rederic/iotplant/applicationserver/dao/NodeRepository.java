@@ -7,10 +7,11 @@ import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.rest.core.annotation.RepositoryRestResource;
 
 import java.util.List;
+import java.util.Map;
 
 @RepositoryRestResource(exported=false)
 public interface NodeRepository extends JpaRepository<ModelNode, String>,JpaSpecificationExecutor<ModelNode> {
 		//do somethings
-        @Query(value="select * from model_node a where a.pid = ?",nativeQuery=true)
-        List<ModelNode> findByPid(String pid);
+        @Query(value="select a.*,'' svalue from model_node a where a.pid = ?",nativeQuery=true)
+        List<Map<String,Object>> findByPid(String pid);
 }

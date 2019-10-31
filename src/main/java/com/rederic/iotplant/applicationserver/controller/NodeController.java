@@ -137,8 +137,7 @@ public class NodeController extends CommonController {
 	})
 	@RequestMapping(value = "/getnodes")
 	public CommonResult getSensorByPid(String pid){
-		System.out.println(pid);
-		List<ModelNode> nodes = nodeService.findByPId(pid);
+		List<Map<String,Object>> nodes = nodeService.findByPId(pid);
 		CommonResult cr = new CommonResult();
 		cr.setOk(true);
 		cr.setData(nodes);

@@ -105,16 +105,16 @@ public class MQTTClient {
             LOGGER.error("topic is not exist");
         }
         MqttDeliveryToken token;//Delivery:配送
-        synchronized (this) {//注意：这里一定要同步，否则，在多线程publish的情况下，线程会发生死锁，分析见文章最后补充
+        //synchronized (this) {//注意：这里一定要同步，否则，在多线程publish的情况下，线程会发生死锁，分析见文章最后补充
         try {
             token = mqttTopic.publish(message);//也是发送到执行队列中，等待执行线程执行，将消息发送到消息中间件
-            token.waitForCompletion(2000L);
+            token.waitForCompletion(5000L);
         } catch (MqttPersistenceException e) {
             e.printStackTrace();
         } catch (MqttException e) {
             e.printStackTrace();
         }
-        }
+       // }
     }
 
     /**

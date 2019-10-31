@@ -1,7 +1,6 @@
 package com.rederic.iotplant.applicationserver.mqtt;
 
 
-import com.google.common.collect.Sets;
 import com.google.common.reflect.TypeToken;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -10,16 +9,14 @@ import com.rederic.iotplant.applicationserver.common.util.CommonData;
 import com.rederic.iotplant.applicationserver.common.util.SpringUtil;
 import com.rederic.iotplant.applicationserver.entity.ModelDevice;
 import com.rederic.iotplant.applicationserver.service.DeviceService;
-import org.eclipse.paho.client.mqttv3.IMqttDeliveryToken;
-import org.eclipse.paho.client.mqttv3.MqttCallback;
-import org.eclipse.paho.client.mqttv3.MqttException;
-import org.eclipse.paho.client.mqttv3.MqttMessage;
+import org.eclipse.paho.client.mqttv3.*;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Component;
 
 import java.lang.reflect.Type;
 import java.sql.Timestamp;
+import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
@@ -34,20 +31,21 @@ public class MQTTCallback implements MqttCallback {
 
     public MQTTCallback() {
     }
+    private MQTTClient myMQTTClient;
+
+    public MQTTCallback(MQTTClient myMQTTClient) {
+        this.myMQTTClient = myMQTTClient;
+    }
 
     private static final Logger LOGGER = LoggerFactory.getLogger(MQTTCallback.class);
     //当前在线的数据集合
-    private Set<String> deviceSet = Sets.newConcurrentHashSet();
-    private MQTTClient myMQTTClient;
+    public static Set<String> deviceSet = new HashSet<String>();
     private DeviceService deviceService = (DeviceService)SpringUtil.getBean("deviceServiceImpl");
 
     public Set<String> getDeviceSet() {
         return deviceSet;
     }
 
-    public MQTTCallback(MQTTClient myMQTTClient) {
-        this.myMQTTClient = myMQTTClient;
-    }
 
     /**
      * 丢失连接，可在这里做重连
@@ -100,22 +98,21 @@ public class MQTTCallback implements MqttCallback {
                 String code = msgList.get(i).getKey();
                 String value = msgList.get(i).getValue();
                 if((CommonData.online).equals(code)){
+                    deviceSet.add(sn);
                     Timestamp time = new Timestamp(System.currentTimeMillis());
                     ModelDevice device = new ModelDevice();
                     deviceSet.add(sn);
                     try {//设备已经存在
                         device = deviceService.findById(sn);
                         device.setUpdatetime(time);
-                        //myMQTTClient.publish("webgate/onlineOne",gson.toJson(device));
                     }catch (Exception e){//设备不存在则新建设备
                         device.setId(sn);
                         device.setPid(value);
                         device.setCreatetime(time);;
-                        //myMQTTClient.publish("webgate/onlineAll",gson.toJson(deviceSet));
                     }
                     deviceService.save(device);
                 }else if((CommonData.offline).equals(code)){
-                    deviceSet.remove(sn);
+                   deviceSet.remove(sn);
                     //myMQTTClient.publish("webgate/offlineOne",sn);
                 }
             }

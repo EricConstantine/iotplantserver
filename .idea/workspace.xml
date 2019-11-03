@@ -2,25 +2,18 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e337e091-de82-49db-9cf7-16878967fb21" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/rederic/iotplant/applicationserver/common/filters/FilterCheckInterceptor.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/rederic/iotplant/applicationserver/common/filters/FilterConfig.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/rederic/iotplant/applicationserver/common/config/MqttConfiguration.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/rederic/iotplant/applicationserver/common/config/MqttConfiguration.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/rederic/iotplant/applicationserver/controller/NodeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/rederic/iotplant/applicationserver/controller/NodeController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/rederic/iotplant/applicationserver/controller/ProductController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/rederic/iotplant/applicationserver/controller/ProductController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/rederic/iotplant/applicationserver/dao/NodeRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/rederic/iotplant/applicationserver/dao/NodeRepository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/rederic/iotplant/applicationserver/mqtt/MQTTCallback.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/rederic/iotplant/applicationserver/mqtt/MQTTCallback.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/rederic/iotplant/applicationserver/mqtt/MQTTClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/rederic/iotplant/applicationserver/mqtt/MQTTClient.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/rederic/iotplant/applicationserver/service/NodeService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/rederic/iotplant/applicationserver/service/NodeService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/rederic/iotplant/applicationserver/service/impl/NodeServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/rederic/iotplant/applicationserver/service/impl/NodeServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/mqtt.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mqtt.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/rederic/iotplant/applicationserver/controller/NodeController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/rederic/iotplant/applicationserver/controller/NodeController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/rederic/iotplant/applicationserver/controller/ProductController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/rederic/iotplant/applicationserver/controller/ProductController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/rederic/iotplant/applicationserver/dao/NodeRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/rederic/iotplant/applicationserver/dao/NodeRepository.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/rederic/iotplant/applicationserver/mqtt/MQTTCallback$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/rederic/iotplant/applicationserver/mqtt/MQTTCallback$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/META-INF/application-server.kotlin_module" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/rederic/iotplant/applicationserver/mqtt/MQTTCallback.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/rederic/iotplant/applicationserver/mqtt/MQTTCallback.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/rederic/iotplant/applicationserver/mqtt/MQTTClient.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/rederic/iotplant/applicationserver/mqtt/MQTTClient.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/rederic/iotplant/applicationserver/service/NodeService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/rederic/iotplant/applicationserver/service/NodeService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/rederic/iotplant/applicationserver/service/impl/NodeServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/rederic/iotplant/applicationserver/service/impl/NodeServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/mqtt.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/mqtt.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/createdFiles.lst" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-com.teejo.proofreading.applicationserver.ApplicationServerApplicationTests.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/com.teejo.proofreading.applicationserver.ApplicationServerApplicationTests.txt" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -76,7 +69,7 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../workspace-thingsboard/thingsboard/pom.xml" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/java/com/rederic/iotplant/applicationserver/common/filter" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="project.structure.last.edited" value="SDKs" />
@@ -93,11 +86,11 @@
       <recent name="com.rederic.iotplant.applicationserver.dao" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\workspace\workspace-iot\iotplant-server\src\main\java\com\rederic\iotplant\applicationserver\common\filter" />
       <recent name="C:\workspace\workspace-iot\iotplant-server\src\main\resources" />
       <recent name="C:\workspace\workspace-iot\iotplant-server\src\main\java\com\rederic\iotplant\applicationserver" />
       <recent name="C:\workspace\workspace-iot\iotplant-server\src\main\java\com\rederic\iotplant\applicationserver\common\config" />
       <recent name="C:\workspace\workspace-iot\iotplant-server\src\main\java\com\rederic\iotplant\applicationserver\common\beans" />
-      <recent name="C:\workspace\workspace-iot\iotplant-server\src\main\java\com\rederic\iotplant\applicationserver\common\util" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -156,12 +149,7 @@
       <serviceView>
         <option name="contentProportion" value="0.06348123" />
         <treeState>
-          <expand>
-            <path>
-              <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
-              <item name="com.intellij.execution.services.ServiceModel$ServiceGroupNode@7e66fe84" type="7427dc5b:ServiceModel$ServiceGroupNode" />
-            </path>
-          </expand>
+          <expand />
           <select />
         </treeState>
       </serviceView>
@@ -212,7 +200,9 @@
       <workItem from="1572438420521" duration="3222000" />
       <workItem from="1572444506524" duration="3479000" />
       <workItem from="1572526673023" duration="4887000" />
-      <workItem from="1572534219092" duration="3648000" />
+      <workItem from="1572534219092" duration="3735000" />
+      <workItem from="1572609890411" duration="5762000" />
+      <workItem from="1572620304465" duration="1391000" />
     </task>
     <servers />
   </component>
@@ -246,14 +236,14 @@
           <option name="timeStamp" value="21" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/rederic/iotplant/applicationserver/controller/ProductController.java</url>
-          <line>70</line>
-          <option name="timeStamp" value="25" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/com/rederic/iotplant/applicationserver/controller/UserController.java</url>
           <line>15</line>
           <option name="timeStamp" value="26" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/rederic/iotplant/applicationserver/controller/ProductController.java</url>
+          <line>200</line>
+          <option name="timeStamp" value="27" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

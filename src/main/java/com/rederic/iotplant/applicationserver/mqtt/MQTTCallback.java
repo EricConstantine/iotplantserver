@@ -65,12 +65,15 @@ public class MQTTCallback implements MqttCallback {
                 }
                 LOGGER.warn("mqtt reconnect times = {} try again...", reconnectTimes++);
                 MQTTClient.getClient().reconnect();
+                MQTTClient.getClient().subscribe("device/#");
             } catch (MqttException e) {
                 LOGGER.error("", e);
+                System.out.println("重新连接异常");
             }
             try {
                 Thread.sleep(1000);
             } catch (InterruptedException e1) {
+                System.out.println("线程休眠后异常");
                 e1.printStackTrace();
             }
         }
@@ -101,7 +104,6 @@ public class MQTTCallback implements MqttCallback {
                     deviceSet.add(sn);
                     Timestamp time = new Timestamp(System.currentTimeMillis());
                     ModelDevice device = new ModelDevice();
-                    deviceSet.add(sn);
                     try {//设备已经存在
                         device = deviceService.findById(sn);
                         device.setUpdatetime(time);
@@ -119,6 +121,7 @@ public class MQTTCallback implements MqttCallback {
 
 		} catch (Exception e) {
 			// TODO: handle exception
+            System.out.println("接收消息异常");
 			e.printStackTrace();
 		}
         LOGGER.error("接收消息主题 : {}，接收消息内容 : {}", s, new String(mqttMessage.getPayload()));

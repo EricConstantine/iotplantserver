@@ -43,7 +43,7 @@ public class MqttConfiguration {
             try {
                 myMQTTClient.connect();
                 myMQTTClient.subscribe(defaultTopic);
-                System.out.println("MQTT订阅完成a");
+                System.out.println("MQTT订阅完成BBB");
                 return myMQTTClient;
             } catch (MqttException e) {
             	LOGGER.error("MQTT connect exception,connect time = " + i);

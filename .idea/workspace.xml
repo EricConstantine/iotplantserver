@@ -2,18 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e337e091-de82-49db-9cf7-16878967fb21" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/rederic/iotplant/applicationserver/common/filters/FilterCheckInterceptor.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/rederic/iotplant/applicationserver/common/filters/FilterConfig.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/rederic/iotplant/applicationserver/common/config/MqttConfiguration.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/rederic/iotplant/applicationserver/common/config/MqttConfiguration.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/rederic/iotplant/applicationserver/mqtt/MQTTCallback.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/rederic/iotplant/applicationserver/mqtt/MQTTCallback.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/META-INF/application-server.kotlin_module" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/rederic/iotplant/applicationserver/mqtt/MQTTCallback.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/rederic/iotplant/applicationserver/mqtt/MQTTCallback.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/createdFiles.lst" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-com.teejo.proofreading.applicationserver.ApplicationServerApplicationTests.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/surefire-reports/com.teejo.proofreading.applicationserver.ApplicationServerApplicationTests.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/rederic/iotplant/applicationserver/mqtt/MQTTClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/rederic/iotplant/applicationserver/mqtt/MQTTClient.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/mqtt.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mqtt.properties" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -75,7 +68,8 @@
     <property name="project.structure.last.edited" value="SDKs" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
-    <property name="settings.editor.selected.configurable" value="project.propCompiler" />
+    <property name="settings.editor.selected.configurable" value="editor.preferences.fonts.default" />
+    <property name="settings.editor.splitter.proportion" value="0.23232323" />
   </component>
   <component name="RecentsManager">
     <key name="CopyClassDialog.RECENTS_KEY">
@@ -149,7 +143,12 @@
       <serviceView>
         <option name="contentProportion" value="0.06348123" />
         <treeState>
-          <expand />
+          <expand>
+            <path>
+              <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
+              <item name="com.intellij.execution.services.ServiceModel$ServiceGroupNode@49672ca" type="7427dc5b:ServiceModel$ServiceGroupNode" />
+            </path>
+          </expand>
           <select />
         </treeState>
       </serviceView>
@@ -203,6 +202,8 @@
       <workItem from="1572534219092" duration="3735000" />
       <workItem from="1572609890411" duration="5762000" />
       <workItem from="1572620304465" duration="1391000" />
+      <workItem from="1572838019728" duration="1178000" />
+      <workItem from="1572839282445" duration="3400000" />
     </task>
     <servers />
   </component>

@@ -65,7 +65,7 @@ public class MQTTCallback implements MqttCallback {
                 }
                 LOGGER.warn("mqtt reconnect times = {} try again...", reconnectTimes++);
                 MQTTClient.getClient().reconnect();
-                MQTTClient.getClient().subscribe("device/#");
+                //MQTTClient.getClient().subscribe("device/#");
             } catch (MqttException e) {
                 LOGGER.error("", e);
                 System.out.println("重新连接异常");
@@ -115,6 +115,7 @@ public class MQTTCallback implements MqttCallback {
                     deviceService.save(device);
                 }else if((CommonData.offline).equals(code)){
                    deviceSet.remove(sn);
+                    MQTTClient.getClient().publish("aaa",new MqttMessage("ddddddddddd".getBytes()));
                     //myMQTTClient.publish("webgate/offlineOne",sn);
                 }
             }
